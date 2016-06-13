@@ -4,8 +4,10 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts" : {
-      "build-linux": "electron-packager ./ Hachidori --platform=linux --arch=x64 --overwrite",
-      "build-win": "electron-packager ./ Hachidori --platform=win32 --arch=x64 --overwrite"
+      "build-linux": "npm run compile-linux && npm run linux-add-script",
+      "build-win": "electron-packager ./ Hachidori --platform=win32 --arch=x64 --overwrite",
+      "compile-linux" : "electron-packager ./ Hachidori --platform=linux --arch=x64 --overwrite",
+      "linux-add-script" : "echo './Hachidori --disable-gpu --enable-transparent-visuals' > Hachidori.sh && chmod +x Hachidori.sh"
   },
   "dependencies": {
     "electron-prebuilt": "~1.1.0"

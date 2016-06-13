@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html style="background: #EEEEEE">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <script src="./settings.js"></script>
+    </head>
+    <body style="background: #EEEEEE; margin: 15px;">
+        <button type="button" onclick="localStorage.clear();setAll()" style="float: right">Clear Settings</button>
+
+        <table>
+            <td>
+                <h3 style="margin: 0">Content</h3>
+            </td>
+            <td>
+                <button style="background: 0; border: 0;" onclick="aboutCntnt()">
+                    <img height="24px" width="24px" src="./images/question_mark.png"/>
+                </button>
+            </td>
+        </table>
+        <font size="2">HTML allowed</font></br>
+        <textarea onkeypress="setStr()" id="strbox" style="width: 80vw; height: 60px"></textarea>
+        <h3 style="margin-bottom: 8px">Widget Size</h3>
+        <table>
+            <td>
+                Width<br>
+                Height
+            </td>
+            <td>
+                <input id="width_slider" type="range" min="200" max="1000" value="200" onchange="storeSize(); setSizes()"><br>
+                <input id="height_slider" type="range" min="200" max="600" value="200" onchange="storeSize(); setSizes()">
+            </td>
+            <td>
+                <span id="width_ph">200</span><br>
+                <span id="height_ph">200</span>
+            </td>
+        </table>
+        
+    </body>
+</html>

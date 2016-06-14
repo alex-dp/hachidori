@@ -10,7 +10,7 @@
 
         <table>
             <td>
-                <h3 style="margin: 0">Content</h3>
+                <h3 class="setting">Content</h3>
             </td>
             <td>
                 <button style="background: 0; border: 0;" onclick="aboutCntnt()">
@@ -19,7 +19,7 @@
             </td>
         </table>
         <font size="2">HTML allowed</font></br>
-        <textarea onkeypress="setStr()" id="strbox" style="width: 80vw; height: 60px"></textarea>
+        <textarea onkeypress="setStr()" id="strbox" style="font-family: monospace; width: 80vw; height: 60px"></textarea>
         <h3 style="margin-bottom: 8px">Widget Size</h3>
         <table>
             <td>
@@ -37,30 +37,31 @@
         </table>
 
         <table>
-            <td><h3>Language</h3></td>
+            <td><h3 class="setting">Language</h3></td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <select style="font-size: 15px" onchange="setLang()" id="lang_select">
                     <option value="en" style="font-size: 15px">English</option>
-                    <option value="it" style="font-size: 15px">Italian</option>
+                    <option value="it" style="font-size: 15px">Italiano</option>
+                    <option value="es" style="font-size: 15px">Español</option>
+                    <option value="fr" style="font-size: 15px">Français</option>
                 </select>
             </td>
         </table>
 
         <table>
-            <td><h3>Temperature unit</h3></td>
+            <td><h3 class="setting">Temperature unit</h3></td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <select style="font-size: 15px" onchange="setDeg()" id="deg_select">
                     <option value="C" style="font-size: 15px">°C</option>
                     <option value="F" style="font-size: 15px">°F</option>
-                    <option value="K" style="font-size: 15px">K</option>
                 </select>
             </td>
         </table>
 
         <table>
-            <td><h3>Location</h3></td>
+            <td><h3 class="setting">Location</h3></td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
                 <input type="text" id="city">

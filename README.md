@@ -10,4 +10,4 @@ This is what it looks like:
 
 package with electron,
 
-precompiled packages coming soon i guess
+for linux, download hachidori-linux.zip, extract and run Hachidori.sh

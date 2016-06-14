@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 const electron = require('electron')
 const app = electron.app
@@ -51,12 +51,12 @@ function update () {
     count++;
 }
 
-function wtos(day) {
-    return settings.week[getVal('lang')][day]
+function dName(day) {
+    return settings.week[getVal('lang')][new Date().getDay()]
 }
 
-function mtos(month) {
-    return settings.months[getVal('lang')][month]
+function mName(month) {
+    return settings.months[getVal('lang')][new Date().getMonth()]
 }
 
 
@@ -72,18 +72,30 @@ function getTemp() {
     if (count % 12000 === 0)
     weather.find({search: getVal('location'),
         degreeType: getVal('degree')}, function(error, result){
-            t = result[0].current.temperature
+            if(result) t = result[0].current.temperature
         })
-    return t;
+    return t
 }
 
 function getWeather() {
     if (count % 12000 === 0)
     weather.find({search: getVal('location'),
         degreeType: getVal('degree')}, function(error, result){
-            w = result[0].current.skytext
+            if(result) w = result[0].current.skytext
         })
-    return w;
+    return w
+}
+
+function getHour() {
+    return new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours()
+}
+
+function getMin() {
+    return new Date().getMinutes() < 10 ? "0" + new Date().getMinutes() : new Date().getMinutes()
+}
+
+function getSec() {
+    return new Date().getSeconds() < 10 ? "0" + new Date().getSeconds() : new Date().getSeconds()
 }
 
 function checkandcreate() {
@@ -91,36 +103,67 @@ function checkandcreate() {
         createWindow()
 }
 
+function fm() {
+    return round(os.freemem() / 1024000000)
+}
+
+function tm() {
+    return round(os.totalmem() / 1024000000)
+}
+
+function bm() {
+    return round((os.totalmem() - os.freemem()) / 1024000000)
+}
+
+function fp() {
+    return round(100 * os.freemem() / os.totalmem())
+}
+
+function bp() {
+    return round(100 * ( 1 - (os.freemem() / os.totalmem())))
+}
+
+function getFullYear() {
+    return new Date().getFullYear()
+}
+
+function getMonth() {
+    return new Date().getMonth()
+}
+
+function getDate() {
+    return new Date().getDate()
+}
+
 function round(int) {
     return parseFloat(Math.round(int * 100) / 100).toFixed(2)
 }
 
 function parse(str) {
-    var date = new Date()
     var features = ['H', 'm', 's', 'Y', 'M', 'N', 'd', 'w', 'fm', 'tm', 'bm', 'fp', 'bp', 'bl', 'ct', 'cw']
 
     var functions = [
-        date.getHours() < 10 ? "0" + date.getHours() : date.getHours(),
-        date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes(),
-        date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds(),
-        date.getFullYear(),
-        date.getMonth(),
-        mtos(date.getMonth()),
-        date.getDate(),
-        wtos(date.getDay()),
-        round(os.freemem() / 1024000000),
-        round(os.totalmem() / 1024000000),
-        round((os.totalmem() - os.freemem()) / 1024000000),
-        round(1000 * os.freemem() / os.totalmem()),
-        round(100 * (os.freemem() / os.totalmem())),
-        getBattery(),
-        getTemp(),
-        getWeather()
+        getHour,
+        getMin,
+        getSec,
+        getFullYear,
+        getMonth,
+        mName,
+        getDate,
+        dName,
+        fm,
+        tm,
+        bm,
+        fp,
+        bp,
+        getBattery,
+        getTemp,
+        getWeather
     ]
 
     for (var i = 0; i < features.length; i++)
         while (str.indexOf('$' + features[i]) > -1)
-            str = str.replace('$' + features[i], functions[i])
+            str = str.replace('$' + features[i], functions[i]())
 
     return str
 }

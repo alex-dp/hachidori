@@ -5,14 +5,22 @@
     "lang" : "en",
     "week": {
     	"en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    	"it": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"]
+    	"it": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
+        "es": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+        "fr": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"]
     },
     "months": {
     	"en": ["January", "February", "March", "April", "May", "June",
         	"July", "August", "September", "October", "November", "December"],
 
     	"it": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
-        	"Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
+            "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+
+        "es": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+            "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+
+        "fr": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+            "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
     },
     "location": "NY",
     "degree": "C"

@@ -1,6 +1,9 @@
 @font-face { font-family: roboto; src: url('fonts/Roboto-Regular.ttf'); }
 
-* {font-family: roboto}
+* {
+    font-family: roboto;
+    -webkit-user-select: none;
+}
 
 body {
     background: rgba(0, 0, 0, 0);
@@ -22,15 +25,13 @@ button {
     outline: 0;
 }
 
-<<<<<<< HEAD
-.right_col {
-    float: right;
-}
-=======
 input[type="color"]{
     height: 30pt;
     width: 30pt;
     border: none;
     margin: none;
 }
->>>>>>> bf169cf5d1a4b12a5495471ab706a8d2461b29d5
+
+.setting {
+    margin: 2px;
+}

@@ -1,0 +1,27 @@
+@font-face { font-family: roboto; src: url('fonts/Roboto-Regular.ttf'); }
+
+* {font-family: roboto}
+
+body {
+    background: rgba(0, 0, 0, 0);
+}
+
+html {
+    background: rgba(0, 0, 0, 0);
+    -webkit-app-region: drag;
+}
+
+font {
+    font-size: 200;
+    font-weight: 400;
+}
+
+button {
+    -webkit-app-region: no-drag;
+}:focus {
+    outline: 0;
+}
+
+.right_col {
+    float: right;
+}

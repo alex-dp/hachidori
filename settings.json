@@ -1,0 +1,19 @@
+{
+    "str": "$H:$m:$s",
+    "width": 200,
+    "height": 200,
+    "lang" : "en",
+    "week": {
+    	"en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    	"it": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"]
+    },
+    "months": {
+    	"en": ["January", "February", "March", "April", "May", "June",
+        	"July", "August", "September", "October", "November", "December"],
+
+    	"it": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
+        	"Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"]
+    },
+    "location": "NY",
+    "degree": "C"
+}

@@ -6,8 +6,12 @@ This is what it looks like:
 
 <img src="./images/scrot.png">
 
-###Compiling
+###Compilation
 
-package with electron,
+package with electron-packager  
+
+you can find it in npm
+
+####Execution
 
 for linux, download hachidori-linux.zip, extract and run Hachidori.sh

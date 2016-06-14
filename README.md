@@ -14,7 +14,11 @@ npm is required. Execute:
 
 To launch it,
 
+<<<<<<< HEAD
 `./Hachidori-linux-x64/Hachidori.sh`
+=======
+`./Hachidori.sh`
+>>>>>>> bf169cf5d1a4b12a5495471ab706a8d2461b29d5
 
 ###Compiling for Windows
 

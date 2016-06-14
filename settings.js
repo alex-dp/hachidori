@@ -5,7 +5,6 @@ onload = () => {
 }
 
 function setAll(){
-<<<<<<< HEAD
     var strbox = document.getElementById('strbox'),
         width_s = document.getElementById('width_slider'),
         height_s = document.getElementById('height_slider'),
@@ -24,25 +23,10 @@ function setAll(){
     deg_sel.value = getVal('degree') 
 
     location.value = getVal('location')
-=======
-    var strbox = document.getElementById('strbox')
-    var width_s = document.getElementById('width_slider'),
-        height_s = document.getElementById('height_slider')
-
-    strbox.value = localStorage.getItem('str') == null ?
-        settings.str : localStorage.getItem('str')
-
-    width_s.value = localStorage.getItem('width') == null ?
-        settings.width  : localStorage.getItem('width')
-
-    height_s.value = localStorage.getItem('height') == null ?
-        settings.height  : localStorage.getItem('height')
->>>>>>> bf169cf5d1a4b12a5495471ab706a8d2461b29d5
 
     setSizes()
 }
 
-<<<<<<< HEAD
 function getVal(str) {
     return localStorage.getItem(str) == null ?
         settings[str]  : localStorage.getItem(str)
@@ -52,12 +36,6 @@ function initSettings () {
     window.open('file://' + __dirname + '/settings.html',
         'Settings',
         'width = 600, height = 400, frame = true, skipTaskbar = false')
-=======
-function initSettings () {
-    window.open('file://' + __dirname + '/settings.html',
-        'Settings',
-        'width = 600, height = 400, frame = true')
->>>>>>> bf169cf5d1a4b12a5495471ab706a8d2461b29d5
 }
 
 function setStr() {
@@ -86,7 +64,6 @@ function aboutCntnt() {
     window.open('file://' + __dirname + '/formatting.html',
         'Formatting',
         'width = 400, height = 300, frame = true')
-<<<<<<< HEAD
 }
 
 function setLang() {
@@ -101,7 +78,5 @@ function setLoc() {
 
 function setDeg() {
     var select = document.getElementById('deg_select')
-    localStorage.setItem('degree', select.value)   
-=======
->>>>>>> bf169cf5d1a4b12a5495471ab706a8d2461b29d5
+    localStorage.setItem('degree', select.value)
 }

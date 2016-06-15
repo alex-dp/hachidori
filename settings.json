@@ -3,12 +3,14 @@
     "width": 200,
     "height": 200,
     "lang" : "en",
+
     "week": {
     	"en": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     	"it": ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"],
         "es": ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
         "fr": ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"]
     },
+
     "months": {
     	"en": ["January", "February", "March", "April", "May", "June",
         	"July", "August", "September", "October", "November", "December"],
@@ -23,5 +25,10 @@
             "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"]
     },
     "location": "NY",
-    "degree": "C"
+    "degree": "C",
+    "preset": "str",
+
+    "preset-1": "<center><font color=\"orange\" size=\"4\">Good $pod<br><font color=\"white\" size=\"8\"><b>$H<\/b>:$m:$s",
+    "preset-2": "<center><font color=\"green\" size=\"3\">free / total<br><font size=\"6\">$fmGB / $tmGB<br>$bl%",
+    "preset-3": "<center><font color=\"purple\" size=\"5\">It is $cw and $ct°$Dt in $loc right now."
 }

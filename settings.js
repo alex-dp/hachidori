@@ -10,9 +10,10 @@ function setAll(){
         height_s = document.getElementById('height_slider'),
         lan_sel = document.getElementById('lang_select'),
         deg_sel = document.getElementById('deg_select'),
-        location = document.getElementById('city')
+        location = document.getElementById('city'),
+        presets = document.getElementById('presets')
 
-    strbox.value = getVal('str')
+    strbox.value = getVal(getVal('preset'))
 
     width_s.value = getVal('width') 
 
@@ -24,6 +25,8 @@ function setAll(){
 
     location.value = getVal('location')
 
+    presets.value = getVal('preset')
+
     setSizes()
 }
 
@@ -33,14 +36,16 @@ function getVal(str) {
 }
 
 function initSettings () {
-    window.open('file://' + __dirname + '/settings.html',
+    var win = window.open('file://' + __dirname + '/settings.html',
         'Settings',
         'width = 600, height = 400, frame = true, skipTaskbar = false')
+    win.on('closed', function(){win = null})
 }
 
 function setStr() {
     var strbox = document.getElementById('strbox')
-    localStorage.setItem('str', strbox.value)
+    if (document.getElementById('presets').value === 'str')
+        localStorage.setItem('str', strbox.value)
 }
 
 function storeSize() {
@@ -79,4 +84,12 @@ function setLoc() {
 function setDeg() {
     var select = document.getElementById('deg_select')
     localStorage.setItem('degree', select.value)
+}
+
+function setPreset() {
+    var select = document.getElementById('presets'),
+        strbox = document.getElementById('strbox')
+
+    localStorage.setItem('preset', select.value)
+    strbox.value = getVal(select.value)
 }

@@ -38,8 +38,7 @@ function quitall() {
 
 function update () {
     var elem = document.getElementById('color')
-    var str = localStorage.getItem('str') == null ?
-        settings.str : localStorage.getItem('str')
+    var str = getVal(getVal('preset'))
 
     str = parse(str)
 
@@ -65,11 +64,11 @@ function getBattery() {
     bl().then(function(level) {
         l = level;
     })
-    return Math.floor(l * 100)
+    return parseInt(l * 100)
 }
 
 function getTemp() {
-    if (count % 12000 === 0)
+    if (count % 1200 === 0)
     weather.find({search: getVal('location'),
         degreeType: getVal('degree')}, function(error, result){
             if(result) t = result[0].current.temperature
@@ -78,7 +77,7 @@ function getTemp() {
 }
 
 function getWeather() {
-    if (count % 12000 === 0)
+    if (count % 1200 === 0)
     weather.find({search: getVal('location'),
         degreeType: getVal('degree')}, function(error, result){
             if(result) w = result[0].current.skytext
@@ -104,15 +103,15 @@ function checkandcreate() {
 }
 
 function fm() {
-    return round(os.freemem() / 1024000000)
+    return round(os.freemem() / 1000000000)
 }
 
 function tm() {
-    return round(os.totalmem() / 1024000000)
+    return round(os.totalmem() / 1000000000)
 }
 
 function bm() {
-    return round((os.totalmem() - os.freemem()) / 1024000000)
+    return round((os.totalmem() - os.freemem()) / 1000000000)
 }
 
 function fp() {
@@ -135,12 +134,28 @@ function getDate() {
     return new Date().getDate()
 }
 
+function getPOD(){
+    var date = new Date()
+    if (date.getHours() < 12) return 'Morning'
+    else if (date.getHours() < 18) return 'Afternoon'
+    else if (date.getHours() < 21) return 'Evening'
+    else return 'Night'
+}
+
+function getDegType() {
+    return getVal('degree')
+}
+
+function getLocation() {
+    return getVal('location')
+}
+
 function round(int) {
     return parseFloat(Math.round(int * 100) / 100).toFixed(2)
 }
 
 function parse(str) {
-    var features = ['H', 'm', 's', 'Y', 'M', 'N', 'd', 'w', 'fm', 'tm', 'bm', 'fp', 'bp', 'bl', 'ct', 'cw']
+    var features = ['H', 'm', 's', 'Y', 'M', 'N', 'd', 'w', 'fm', 'tm', 'bm', 'fp', 'bp', 'bl', 'ct', 'cw', 'pod', 'Dt', 'loc']
 
     var functions = [
         getHour,
@@ -158,7 +173,10 @@ function parse(str) {
         bp,
         getBattery,
         getTemp,
-        getWeather
+        getWeather,
+        getPOD,
+        getDegType,
+        getLocation
     ]
 
     for (var i = 0; i < features.length; i++)

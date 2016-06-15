@@ -17,6 +17,15 @@
                     <img height="24px" width="24px" src="./images/question_mark.png"/>
                 </button>
             </td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td>
+                <select id="presets" onchange="setPreset()">
+                    <option value="str">Custom</option>
+                    <option value="preset-1">Greeting + time</option>
+                    <option value="preset-2">Memory usage + battery</option>
+                    <option value="preset-3">Today's weather</option>
+                </select>
+            </td>
         </table>
         <font size="2">HTML allowed</font></br>
         <textarea onkeypress="setStr()" id="strbox" style="font-family: monospace; width: 80vw; height: 60px"></textarea>

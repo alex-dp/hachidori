@@ -14,12 +14,7 @@ html {
     -webkit-app-region: drag;
 }
 
-font {
-    font-size: 200;
-    font-weight: 400;
-}
-
-button {
+button, input, textarea, select {
     -webkit-app-region: no-drag;
 }:focus {
     outline: 0;
@@ -34,4 +29,8 @@ input[type="color"]{
 
 .setting {
     margin: 2px;
+}
+
+.section-heading {
+    margin-bottom: 0;
 }

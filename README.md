@@ -6,7 +6,10 @@ This is what it looks like:
 
 <img src="./images/scrot.png">
 
-###Compilation
+look under `releases` for precompiled packages.
+#####I need a windows installer so if anyone could make one for me I'd be thankful.
+
+####Compilation
 
 package with electron-packager  
 

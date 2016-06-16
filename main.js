@@ -46,8 +46,7 @@ function update () {
 
     if (localStorage.getItem('width'))
         window.resizeTo(localStorage.getItem('width'), localStorage.getItem('height'))
-
-    count++;
+    count++
 }
 
 function dName(day) {

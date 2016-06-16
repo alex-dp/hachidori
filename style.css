@@ -28,7 +28,12 @@ input[type="color"]{
 }
 
 .setting {
-    margin: 2px;
+    margin: 8px;
+    margin-left: 0 !important;
+}
+
+.setting_in {
+    margin: 3px;
 }
 
 .section-heading {

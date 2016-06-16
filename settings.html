@@ -29,7 +29,7 @@
         </table>
         <font size="2">HTML allowed</font></br>
         <textarea onkeypress="setStr()" id="strbox" style="font-family: monospace; width: 80vw; height: 60px"></textarea>
-        <h3 style="margin-bottom: 8px">Widget Size</h3>
+        <h3 class="setting">Widget Size</h3>
         <table>
             <td>
                 Width<br>
@@ -46,38 +46,29 @@
         </table>
 
         <table>
-            <td><h3 class="setting">Language</h3></td>
+            <td>
+                <h3 class="setting">Language</h3>
+                <h3 class="setting">Temperature unit</h3>
+                <h3 class="setting">Location</h3>
+            </td>
             <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
             <td>
-                <select style="font-size: 15px" onchange="setLang()" id="lang_select">
+                <select style="font-size: 15px" class="setting_in" onchange="setLang()" id="lang_select">
                     <option value="en" style="font-size: 15px">English</option>
                     <option value="it" style="font-size: 15px">Italiano</option>
                     <option value="es" style="font-size: 15px">Español</option>
                     <option value="fr" style="font-size: 15px">Français</option>
                 </select>
-            </td>
-        </table>
-
-        <table>
-            <td><h3 class="setting">Temperature unit</h3></td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>
-                <select style="font-size: 15px" onchange="setDeg()" id="deg_select">
+                <br>
+                <select style="font-size: 15px" class="setting_in" onchange="setDeg()" id="deg_select">
                     <option value="C" style="font-size: 15px">°C</option>
                     <option value="F" style="font-size: 15px">°F</option>
                 </select>
-            </td>
-        </table>
-
-        <table>
-            <td><h3 class="setting">Location</h3></td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td>
-                <input type="text" id="city">
+                <br>
+                <input type="text" id="city" class="setting_in">
                 &nbsp;&nbsp;&nbsp;
-                <button onclick="setLoc()">Set</button>
+                <button onclick="setLoc()" class="setting_in">Set</button>
             </td>
         </table>
-        
     </body>
 </html>

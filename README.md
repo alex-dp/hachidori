@@ -9,6 +9,10 @@ This is what it looks like:
 look under `releases` for precompiled packages.
 #####I need a windows installer so if anyone could make one for me I'd be thankful.
 
+####Installation
+#####Linux
+Extract `hachidori-linux-x64.zip` wherever you want and execute `INSTALL.sh`. done.
+
 ####Compilation
 
 package with electron-packager  

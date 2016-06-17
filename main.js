@@ -7,7 +7,8 @@ const globalShortcut = electron.globalShortcut
 var settings = require('./settings.json'),
     os = require('os'),
     weather = require('weather-js'),
-    l, t, w, count = 0
+    os_utils = require('os-utils'),
+    l, t, w, c = 0, count = 0
 var settings = require('./settings.json');
 var os = require('os')
 
@@ -149,12 +150,18 @@ function getLocation() {
     return getVal('location')
 }
 
+function getCPUUsage() {
+    if (count % 10 === 0)
+        os_utils.cpuUsage(a => {c = a})
+    return round(c * 100)
+}
+
 function round(int) {
     return parseFloat(Math.round(int * 100) / 100).toFixed(2)
 }
 
 function parse(str) {
-    var features = ['H', 'm', 's', 'Y', 'M', 'N', 'd', 'w', 'fm', 'tm', 'bm', 'fp', 'bp', 'bl', 'ct', 'cw', 'pod', 'Dt', 'loc']
+    var features = ['H', 'm', 's', 'Y', 'M', 'N', 'd', 'w', 'fm', 'tm', 'bm', 'fp', 'bp', 'bl', 'ct', 'cw', 'pod', 'Dt', 'loc', 'cu']
 
     var functions = [
         getHour,
@@ -175,7 +182,8 @@ function parse(str) {
         getWeather,
         getPOD,
         getDegType,
-        getLocation
+        getLocation,
+        getCPUUsage
     ]
 
     for (var i = 0; i < features.length; i++)

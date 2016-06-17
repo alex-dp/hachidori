@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
+    "build-all-all": "npm run build-all-linux && npm run build-all-win",
     "build-all-linux": "npm run build-linux && npm run pack-linux && npm run linux-installer && npm run zip-linux",
     "build-all-win": "npm run build-win && npm run pack-win && npm run zip-win",
     "build-linux": "electron-packager ./ Hachidori --platform=linux --arch=x64 --overwrite --ignore=releases --ignore=node-modules/electron-*",

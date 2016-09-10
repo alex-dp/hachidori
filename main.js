@@ -127,7 +127,7 @@ function getFullYear() {
 }
 
 function getMonth() {
-    return new Date().getMonth()
+    return new Date().getMonth() + 1
 }
 
 function getDate() {
